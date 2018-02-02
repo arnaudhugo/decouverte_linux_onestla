@@ -77,6 +77,9 @@ $ sudo visudo
 ---------------------------------------------- ETAPE 7 = A FINIR ----------------------------------------------
 
 # Afficher les variables BUREAU, ETAGE et SURNOM :
+	$ env BUREAU=42
+	$ env ETAGE=5
+	$ env SURNOM=robinet
 	$ env | grep 'BUREAU\|ETAGE\|SURNOM'
 
 Lors de la reconnexion de l'utilisateur les variables n'existent plus. Nous pourrions les definirs dans le profile de l'utilisateur pour qu'elles soient charger lors de la connexion de ce dernier. 

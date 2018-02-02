@@ -76,15 +76,17 @@ $ sudo visudo
 
 ---------------------------------------------- ETAPE 7 = A FINIR ----------------------------------------------
 
-$ export $VAR=difhfjmglk
-$ echo $VAR
+# Afficher les variables BUREAU, ETAGE et SURNOM :
+	$ env | grep 'BUREAU\|ETAGE\|SURNOM'
+
+Lors de la reconnexion de l'utilisateur les variables n'existent plus. Nous pourrions les definirs dans le profile de l'utilisateur pour qu'elles soient charger lors de la connexion de ce dernier. 
 
 ---------------------------------------------- ETAPE 8 = A TEST ----------------------------------------------
 
 $ sudo emacs /etc/apt/source.list
 	"deb http://packages.dotdeb.org jessie all"
 
-$ wget -O- https://www.dotdeb.org/dotdeb.gpg 
+$ wget -O- https://www.dotdeb.org/dotdeb.gpg
 $ apt-key add dotdeb.gpg
 
 $ apt install php7.0

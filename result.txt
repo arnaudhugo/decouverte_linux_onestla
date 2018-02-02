@@ -132,6 +132,7 @@ $ php -v
 
 $ crontab -e
 	"42 23 * * 3,6	sudo service apache restart"
+$ sudo service cron start
 
 No root user : https://forum.ubuntu-fr.org/viewtopic.php?id=329277
 42 23 * * 3,6 -> At 42 minutes past 23:00 on Wed and Sat

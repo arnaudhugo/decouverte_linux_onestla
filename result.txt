@@ -48,7 +48,7 @@ sudo mkdir /data/compta/coms/
 
 sudo setfacl -m "g:commercial:rw-" /data/compta/coms/
 
-1 - Avec ka cifiguration actuelle cela n'est pas possible car le groupe commercial n'ayant pas acces a aucun droit dans le répertoire "compta", qui se trouver être le répertoire parant du nouveau répertoire "coms" les membres de ce dis groupe ne pourrons, même si nous leur donnons acces a ce dernier, pas y acceder.
+1 - Avec la configuration actuelle cela n'est pas possible car le groupe commercial n'ayant pas acces a aucun droit dans le répertoire "compta", qui se trouver être le répertoire parant du nouveau répertoire "coms" les membres de ce dis groupe ne pourrons, même si nous leur donnons acces a ce dernier, pas y acceder.
 
 2 -
 cd /data/compta/coms/
@@ -101,6 +101,8 @@ rsync --delete -> effcer fichier non existant cher l'emetteur
 rsync --no-OPTION -> TROUVER OPTION
 
 rsync -v -e "ssh -p2222" /home/localuser/testfile.txt remoteuser@X.X.X.X:~/transfer
+
+rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configurations/ bob@172.16.231.7:/data/admin/
 
 ------------------------------------------------- ETAPE 11
 

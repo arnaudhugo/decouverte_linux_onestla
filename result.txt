@@ -4,114 +4,113 @@
 
 ---------------------------------------------- ETAPE 2
 
-sudo emacs /etc/ssh/sshd_config
-Port 22 -> Port 2242
-PermitRootLogin yes -> PermitRootLogin no
-sudo service ssh restart
+$ sudo emacs /etc/ssh/sshd_config
+	"Port 22" -> "Port 2242"
+	"PermitRootLogin yes" -> "PermitRootLogin no"
+$ sudo service ssh restart
 
 ---------------------------------------------- ETAPE 3
 
-sudo addgroup admin && sudo groupmod admin -g 4242
-sudo addgroup compta && sudo groupmod compta -g 4343
-sudo addgroup commercial && sudo groupmod commercial -g 4444
+$ sudo addgroup admin && sudo groupmod admin -g 4242
+$ sudo addgroup compta && sudo groupmod compta -g 4343
+$ sudo addgroup commercial && sudo groupmod commercial -g 4444
 
-sudo adduser --gid 4242 bob
-sudo adduser --gid 4242 toto
-sudo adduser --gid 4242 john
+$ sudo adduser --gid 4242 bob
+$ sudo adduser --gid 4242 toto
+$ sudo adduser --gid 4242 john
 
-sudo adduser --gid 4343 alice
-sudo adduser --gid 4343 martine
+$ sudo adduser --gid 4343 alice
+$ sudo adduser --gid 4343 martine
 
-sudo adduser --gid 4444 marc
-sudo adduser --gid 4444 jean
-sudo adduser --gid 4444 tata
+$ sudo adduser --gid 4444 marc
+$ sudo adduser --gid 4444 jean
+$ sudo adduser --gid 4444 tata
 
 ---------------------------------------------- ETAPE 4
 
-cd
-sudo mkdir data
-sudo mkdir data/admin
-sudo mkdir data/compta
-sudo mkdir data/commercial
+$ cd
+$ sudo mkdir data
+$ sudo mkdir data/admin
+$ sudo mkdir data/compta
+$ sudo mkdir data/commercial
 
-sudo setfacl -m "g:admin:rwx" data/admin/
-sudo setfacl -m "g:compta:---" data/admin/
-sudo setfacl -m "g:commercial:---" data/admin/
+$ sudo setfacl -m "g:admin:rwx" data/admin/
+$ sudo setfacl -m "g:compta:---" data/admin/
+$ sudo setfacl -m "g:commercial:---" data/admin/
 
-sudo setfacl -m "g:admin:rwx" data/compta/
-sudo setfacl -m "g:compta:rwx" data/compta/
-sudo setfacl -m "g:commercial:---" data/compta/
+$ sudo setfacl -m "g:admin:rwx" data/compta/
+$ sudo setfacl -m "g:compta:rwx" data/compta/
+$ sudo setfacl -m "g:commercial:---" data/compta/
 
-sudo setfacl -m "g:admin:rwx" data/commercial/
-sudo setfacl -m "g:compta:r--" data/commercial/
-sudo setfacl -m "g:commercial:rwx" data/commercial/
+$ sudo setfacl -m "g:admin:rwx" data/commercial/
+$ sudo setfacl -m "g:compta:r--" data/commercial/
+$ sudo setfacl -m "g:commercial:rwx" data/commercial/
 
 ----------------------------------------------- ETAPE 5
 
-sudo mkdir /data/compta/coms/
+$ sudo mkdir /data/compta/coms/
 
-sudo setfacl -m "g:commercial:rw-" /data/compta/coms/
+$ sudo setfacl -m "g:commercial:rw-" /data/compta/coms/
 
-1 - Avec la configuration actuelle cela n'est pas possible car le groupe commercial n'ayant pas acces a aucun droit dans le répertoire "compta", qui se trouve être le répertoire parant du nouveau répertoire "coms" les membres de ce dis groupe ne pourrons, même si nous leur donnons acces a ce dernier, pas y acceder.
+1 - Avec la configuration actuelle cela n'est pas possible car le groupe commercial n'ayant pas acces a aucun droit dans le rÃ©pertoire "compta", qui se trouve Ãªtre le rÃ©pertoire parant du nouveau rÃ©pertoire "coms" les membres de ce dis groupe ne pourrons, mÃªme si nous leur donnons acces a ce dernier, pas y acceder.
 
 2 -
-cd /data/compta/coms/
+$ cd /data/compta/coms/
 
-sudo touch com_marc
-sudo chown marc ./com_marc
+$ sudo touch com_marc
+$ sudo chown marc ./com_marc
 
-sudo touch com_jean
-sudo chown jean ./com_jean
+$ sudo touch com_jean
+$ sudo chown jean ./com_jean
 
-sudo touch com_tata
-sudo chown tata ./com_tata
+$ sudo touch com_tata
+$ sudo chown tata ./com_tata
 
-Marc ne pourra pas ouvrir le fichier com_jean car le propriétaire du fichier est jean.
+Marc ne pourra pas ouvrir le fichier com_jean car le propriÃ©taire du fichier est jean.
 
 ---------------------------------------------- ETAPE 6
 
-visudo
-
-bob     ALL=(ALL:ALL) ALL
-toto    ALL=(ALL:ALL) ALL
-john    ALL=(ALL:ALL) ALL
+$ sudo visudo
+	"bob     ALL=(ALL:ALL) ALL"
+	"toto    ALL=(ALL:ALL) ALL"
+	"john    ALL=(ALL:ALL) ALL"
 
 ---------------------------------------------- ETAPE 7 = A FINIR
 
-export $VAR=difhfjmglk
-echo $VAR
+$ export $VAR=difhfjmglk
+$ echo $VAR
 
 ---------------------------------------------- ETAPE 8 = A TEST
 
-sudo emacs /etc/apt/source.list
-deb http://packages.dotdeb.org jessie all 
+$ sudo emacs /etc/apt/source.list
+	"deb http://packages.dotdeb.org jessie all"
 
-wget -O- https://www.dotdeb.org/dotdeb.gpg 
-apt-key add dotdeb.gpg
+$ wget -O- https://www.dotdeb.org/dotdeb.gpg 
+$ apt-key add dotdeb.gpg
 
-apt install php7.0
-apt install apache2.4
+$ apt install php7.0
+$ apt install apache2.4
 
-apt-mark hold <package-name> (A ESSAYER)
+$ apt-mark hold <package-name> (A ESSAYER)
 
 ---------------------------------------------- ETAPE 9 = VM CAMARADE
 
-ssh-keygen -t rsa -b 2048
+$ ssh-keygen -t rsa -b 2048
 
 ---------------------------------------------- ETAPE 10
 
-rsync --delete -> effcer fichier non existant cher l'emetteur
+$ rsync --delete -> effcer fichier non existant cher l'emetteur
 
-rsync --no-OPTION -> TROUVER OPTION
+$ rsync --no-OPTION -> TROUVER OPTION
 
-rsync -v -e "ssh -p2222" /home/localuser/testfile.txt remoteuser@X.X.X.X:~/transfer
+$ rsync -v -e "ssh -p2222" /home/localuser/testfile.txt remoteuser@X.X.X.X:~/transfer
 
-rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configurations/ bob@172.16.231.7:/data/admin/
+$ rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configurations/ bob@172.16.231.7:/data/admin/
 
 ---------------------------------------------- ETAPE 11
 
-apt-get install
-	php apache mysql 
+$ apt-get install
+	php, apache, mysql 
 
 http://www.teixeira-soft.com/bluescreen/2016/03/15/gnulinux-how-to-install-wordpress-on-debian-8-jessie-blue-screen/
 
@@ -121,12 +120,12 @@ http://www.teixeira-soft.com/bluescreen/2016/03/15/gnulinux-how-to-install-wordp
 
 ---------------------------------------------- ETAPE 13
 
-php -v
+$ php -v
 
-PHP 5.6.30-0+deb8u1 (cli) (built: Feb  8 2017 08:50:21)
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
-    with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+	"PHP 5.6.30-0+deb8u1 (cli) (built: Feb  8 2017 08:50:21)
+	Copyright (c) 1997-2016 The PHP Group
+	Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
+    		with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies"
 
 ------------------------------------------------ ETAPE 14 
 
@@ -134,44 +133,10 @@ Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 
 ------------------------------------------------ ETAPE 15
 
-crontab -e
-42 23 * * 3,6 -> At 42 minutes past 23:00 on Wed and Sat
-
-42 23 * * 3,6	sudo service apache restart
+$ crontab -e
+	"42 23 * * 3,6	sudo service apache restart"
 
 No root user : https://forum.ubuntu-fr.org/viewtopic.php?id=329277
+42 23 * * 3,6 -> At 42 minutes past 23:00 on Wed and Sat
 
 ------------------------------------------------ ETAPE 16
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -28,7 +28,6 @@ $ sudo adduser --gid 4444 tata
 
 ---------------------------------------------- ETAPE 4
 
-$ cd
 $ sudo mkdir data
 $ sudo mkdir data/admin
 $ sudo mkdir data/compta

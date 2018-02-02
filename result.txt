@@ -3,7 +3,7 @@
 sudo emacs /etc/ssh/sshd_config
 Port 22 -> Port 2242
 PermitRootLogin yes -> PermitRootLogin no
-sudo service shh restart
+sudo service ssh restart
 
 ---------------------------------------------- ETAPE 3
 
@@ -50,7 +50,9 @@ sudo setfacl -m "g:commercial:rw-" /data/compta/coms/
 
 1 - Avec ka cifiguration actuelle cela n'est pas possible car le groupe commercial n'ayant pas acces a aucun droit dans le répertoire "compta", qui se trouver être le répertoire parant du nouveau répertoire "coms" les membres de ce dis groupe ne pourrons, même si nous leur donnons acces a ce dernier, pas y acceder.
 
-2 - 
+2 -
+cd /data/compta/coms/
+
 sudo touch com_marc
 sudo chown marc ./com_marc
 

@@ -94,7 +94,11 @@ $ apt-mark hold <package-name> (A ESSAYER)
 
 ---------------------------------------------- ETAPE 9 = VM CAMARADE
 
-$ ssh-keygen -t rsa -b 2048
+# On génère la clé depuis la VM A :
+	$ ssh-keygen -t rsa -b 2048
+
+# On envoie la clé depuis la VM A à la VM B :
+	$ ssh-copy-id username@remote_host
 
 ---------------------------------------------- ETAPE 10
 

@@ -138,6 +138,8 @@ $ sudo service apache2 restart
 $ service mysql restart
 
 # Changer le chemin d'acces
+$ sudo emacs /etc/apache2/sites-available/000-default.conf
+	"DocumentRoot /var/www/html/" -> "DocumentRoot /var/www/html/wordpress/"
 
 ---------------------------------------------- ETAPE 12 = A FAIRE ----------------------------------------------
 

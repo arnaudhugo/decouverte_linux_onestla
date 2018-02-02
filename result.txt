@@ -131,7 +131,7 @@ $ php -v
 ------------------------------------------------ ETAPE 15
 
 $ sudo crontab -u bob -e
-	"42 23 * * 3,6	sudo service apache restart"
+	"42 23 * * 3,6	sudo service apache2 restart"
 $ sudo service cron start
 
 No root user : https://forum.ubuntu-fr.org/viewtopic.php?id=329277

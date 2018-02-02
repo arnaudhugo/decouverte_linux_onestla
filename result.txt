@@ -29,9 +29,9 @@ $ sudo adduser --gid 4444 tata
 ---------------------------------------------- ETAPE 4
 
 $ sudo mkdir data
-$ sudo mkdir data/admin
-$ sudo mkdir data/compta
-$ sudo mkdir data/commercial
+$ sudo mkdir /data/admin
+$ sudo mkdir /data/compta
+$ sudo mkdir /data/commercial
 
 $ sudo setfacl -m "g:admin:rwx" data/admin/
 $ sudo setfacl -m "g:compta:---" data/admin/

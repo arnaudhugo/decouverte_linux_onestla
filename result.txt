@@ -112,7 +112,7 @@ $ sudo apt-mark hold libapache2-mod-php7.0
 $ sudo mkdir /data/admin/configurations
 $ rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configurations/ bob@172.16.231.1:/data/admin/
 
----------------------------------------------- ETAPE 11 = A FINIR ----------------------------------------------
+---------------------------------------------- ETAPE 11 ----------------------------------------------
 
 $ cd /var/www/html/
 $ sudo rm index.html
@@ -136,6 +136,8 @@ $ cd wordpress/
 $ sudo apt-get install php-mysql
 $ sudo service apache2 restart
 $ service mysql restart
+
+# Changer le chemin d'acces
 
 ---------------------------------------------- ETAPE 12 = A FAIRE ----------------------------------------------
 

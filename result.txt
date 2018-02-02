@@ -1,15 +1,15 @@
----------------------------------------------- ETAPE 1
+---------------------------------------------- ETAPE 1 ----------------------------------------------
 
 
 
----------------------------------------------- ETAPE 2
+---------------------------------------------- ETAPE 2 ----------------------------------------------
 
 $ sudo emacs /etc/ssh/sshd_config
 	"Port 22" -> "Port 2242"
 	"PermitRootLogin yes" -> "PermitRootLogin no"
 $ sudo service ssh restart
 
----------------------------------------------- ETAPE 3
+---------------------------------------------- ETAPE 3 ----------------------------------------------
 
 $ sudo addgroup admin && sudo groupmod admin -g 4242
 $ sudo addgroup compta && sudo groupmod compta -g 4343
@@ -26,7 +26,7 @@ $ sudo adduser --gid 4444 marc
 $ sudo adduser --gid 4444 jean
 $ sudo adduser --gid 4444 tata
 
----------------------------------------------- ETAPE 4
+---------------------------------------------- ETAPE 4 ----------------------------------------------
 
 $ sudo mkdir data
 $ sudo mkdir /data/admin
@@ -45,7 +45,7 @@ $ sudo setfacl -m "g:admin:rwx" data/commercial/
 $ sudo setfacl -m "g:compta:r--" data/commercial/
 $ sudo setfacl -m "g:commercial:rwx" data/commercial/
 
------------------------------------------------ ETAPE 5
+----------------------------------------------- ETAPE 5 ----------------------------------------------
 
 $ sudo mkdir /data/compta/coms/
 
@@ -67,19 +67,19 @@ $ sudo chown tata ./com_tata
 
 Marc ne pourra pas ouvrir le fichier com_jean car le propriétaire du fichier est jean.
 
----------------------------------------------- ETAPE 6
+---------------------------------------------- ETAPE 6 ----------------------------------------------
 
 $ sudo visudo
 	"bob     ALL=(ALL:ALL) ALL"
 	"toto    ALL=(ALL:ALL) ALL"
 	"john    ALL=(ALL:ALL) ALL"
 
----------------------------------------------- ETAPE 7 = A FINIR
+---------------------------------------------- ETAPE 7 = A FINIR ----------------------------------------------
 
 $ export $VAR=difhfjmglk
 $ echo $VAR
 
----------------------------------------------- ETAPE 8 = A TEST
+---------------------------------------------- ETAPE 8 = A TEST ----------------------------------------------
 
 $ sudo emacs /etc/apt/source.list
 	"deb http://packages.dotdeb.org jessie all"
@@ -92,7 +92,7 @@ $ apt install apache2.4
 
 $ apt-mark hold <package-name> (A ESSAYER)
 
----------------------------------------------- ETAPE 9
+---------------------------------------------- ETAPE 9 ----------------------------------------------
 
 # On génère la clé depuis la VM A :
 	$ ssh-keygen -t rsa -b 2048
@@ -100,23 +100,23 @@ $ apt-mark hold <package-name> (A ESSAYER)
 # On envoie la clé depuis la VM A à la VM B :
 	$ ssh-copy-id username@remote_host
 
----------------------------------------------- ETAPE 10
+---------------------------------------------- ETAPE 10 ----------------------------------------------
 
 $ sudo mkdir /data/admin/configurations
 $ rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configurations/ bob@172.16.231.1:/data/admin/
 
----------------------------------------------- ETAPE 11
+---------------------------------------------- ETAPE 11 ----------------------------------------------
 
 $ apt-get install
 	php, apache, mysql 
 
 http://www.teixeira-soft.com/bluescreen/2016/03/15/gnulinux-how-to-install-wordpress-on-debian-8-jessie-blue-screen/
 
----------------------------------------------- ETAPE 12
+---------------------------------------------- ETAPE 12 ----------------------------------------------
 
 
 
----------------------------------------------- ETAPE 13
+---------------------------------------------- ETAPE 13 ----------------------------------------------
 
 $ php -v
 	"PHP 5.6.30-0+deb8u1 (cli) (built: Feb  8 2017 08:50:21)
@@ -124,19 +124,17 @@ $ php -v
 	Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
     		with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies"
 
------------------------------------------------- ETAPE 14 
+------------------------------------------------ ETAPE 14 ----------------------------------------------
 
 
 
------------------------------------------------- ETAPE 15
+------------------------------------------------ ETAPE 15 ----------------------------------------------
 
+# 42 23 * * 3,6 -> At 42 minutes past 23:00 on Wed and Sat
 $ sudo crontab -u bob -e
 	"42 23 * * 3,6	sudo service apache2 restart"
 $ sudo service cron start
 
-No root user : https://forum.ubuntu-fr.org/viewtopic.php?id=329277
-42 23 * * 3,6 -> At 42 minutes past 23:00 on Wed and Sat
-
------------------------------------------------- ETAPE 16
+------------------------------------------------ ETAPE 16 ----------------------------------------------
 
 

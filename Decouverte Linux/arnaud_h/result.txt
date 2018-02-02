@@ -1,3 +1,7 @@
+---------------------------------------------- ETAPE 1
+
+
+
 ---------------------------------------------- ETAPE 2
 
 sudo emacs /etc/ssh/sshd_config
@@ -64,7 +68,7 @@ sudo chown tata ./com_tata
 
 Marc ne pourra pas ouvrir le fichier com_jean car le propriétaire du fichier est jean.
 
--------------------------------------------------- ETAPE 6
+---------------------------------------------- ETAPE 6
 
 visudo
 
@@ -72,12 +76,12 @@ bob     ALL=(ALL:ALL) ALL
 toto    ALL=(ALL:ALL) ALL
 john    ALL=(ALL:ALL) ALL
 
--------------------------------------------------- ETAPE 7 (A FINIR)
+---------------------------------------------- ETAPE 7 = A FINIR
 
 export $VAR=difhfjmglk
 echo $VAR
 
--------------------------------------------------- ETAPE 8 (A TEST)
+---------------------------------------------- ETAPE 8 = A TEST
 
 sudo emacs /etc/apt/source.list
 deb http://packages.dotdeb.org jessie all 
@@ -90,11 +94,11 @@ apt install apache2.4
 
 apt-mark hold <package-name> (A ESSAYER)
 
--------------------------------------------------- ETAPE 9 (VM CAMARADE)
+---------------------------------------------- ETAPE 9 = VM CAMARADE
 
 ssh-keygen -t rsa -b 2048
 
------------------------------------------------- ETAPE 10
+---------------------------------------------- ETAPE 10
 
 rsync --delete -> effcer fichier non existant cher l'emetteur
 
@@ -104,18 +108,18 @@ rsync -v -e "ssh -p2222" /home/localuser/testfile.txt remoteuser@X.X.X.X:~/trans
 
 rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configurations/ bob@172.16.231.7:/data/admin/
 
-------------------------------------------------- ETAPE 11
+---------------------------------------------- ETAPE 11
 
 apt-get install
 	php apache mysql 
 
 http://www.teixeira-soft.com/bluescreen/2016/03/15/gnulinux-how-to-install-wordpress-on-debian-8-jessie-blue-screen/
 
------------------------------------------------- ETAPE 12
+---------------------------------------------- ETAPE 12
 
 
 
-------------------------------------------------- ETAPE 13
+---------------------------------------------- ETAPE 13
 
 php -v
 
@@ -128,7 +132,7 @@ Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 
 
 
-------------------------------------------------- ETAPE 15
+------------------------------------------------ ETAPE 15
 
 crontab -e
 42 23 * * 3,6 -> At 42 minutes past 23:00 on Wed and Sat
@@ -137,7 +141,7 @@ crontab -e
 
 No root user : https://forum.ubuntu-fr.org/viewtopic.php?id=329277
 
-------------------------------------------------- ETAPE 16
+------------------------------------------------ ETAPE 16
 
 
 

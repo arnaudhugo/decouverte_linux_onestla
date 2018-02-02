@@ -129,7 +129,7 @@ $ sudo apt-get install mysql-server
 $ mysql -u root -p
 > CREATE DATABASE wordpress_sample;
 > CREATE USER wpuser@localhost IDENTIFIED BY 'wppass';
-> GRANT ALL PRIVILEGES ON wpdatabase.* TO wpuser@localhost;
+> GRANT ALL PRIVILEGES ON wordpress_sample.* TO wpuser@localhost;
 > FLUSH PRIVILEGES;
 > exit
 $ cd wordpress/

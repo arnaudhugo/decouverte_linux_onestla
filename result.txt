@@ -130,7 +130,7 @@ $ php -v
 
 ------------------------------------------------ ETAPE 15
 
-$ crontab -e
+$ sudo crontab -u bob -e
 	"42 23 * * 3,6	sudo service apache restart"
 $ sudo service cron start
 

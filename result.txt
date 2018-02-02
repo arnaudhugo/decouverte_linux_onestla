@@ -104,7 +104,7 @@ $ rsync --no-OPTION -> TROUVER OPTION
 
 $ rsync -v -e "ssh -p2222" /home/localuser/testfile.txt remoteuser@X.X.X.X:~/transfer
 
-$ rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configurations/ bob@172.16.231.1:/data/admin/
+$ rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" bob@172.16.231.1:/data/admin/
 
 ---------------------------------------------- ETAPE 11
 

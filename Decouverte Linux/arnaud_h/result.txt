@@ -52,7 +52,7 @@ sudo mkdir /data/compta/coms/
 
 sudo setfacl -m "g:commercial:rw-" /data/compta/coms/
 
-1 - Avec la configuration actuelle cela n'est pas possible car le groupe commercial n'ayant pas acces a aucun droit dans le répertoire "compta", qui se trouver être le répertoire parant du nouveau répertoire "coms" les membres de ce dis groupe ne pourrons, même si nous leur donnons acces a ce dernier, pas y acceder.
+1 - Avec la configuration actuelle cela n'est pas possible car le groupe commercial n'ayant pas acces a aucun droit dans le répertoire "compta", qui se trouve être le répertoire parant du nouveau répertoire "coms" les membres de ce dis groupe ne pourrons, même si nous leur donnons acces a ce dernier, pas y acceder.
 
 2 -
 cd /data/compta/coms/

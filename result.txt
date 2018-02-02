@@ -115,10 +115,28 @@ $ rsync -vrtu --delete -e "ssh -i /home/arnaud/.ssh/id_rsa" /data/admin/configur
 
 ---------------------------------------------- ETAPE 11 = A FINIR ----------------------------------------------
 
-$ apt-get install
-	php, apache, mysql 
-
-http://www.teixeira-soft.com/bluescreen/2016/03/15/gnulinux-how-to-install-wordpress-on-debian-8-jessie-blue-screen/
+$ cd /var/www/html/
+$ sudo rm index.html
+$ sudo wget http://wordpress.org/latest.zip
+$ sudo aptitude install unzip
+$ sudo unzip -q latest.zip
+$ sudo chown -R www-data:www-data /var/www/html/wordpress
+$ sudo chmod -R 755 /var/www/html/wordpress
+$ sudo rm latest.zip
+$ sudo mkdir -p /var/www/html/wordpress/wp-content/uploads
+$ sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
+$ sudo apt-get install mysql-server
+	+ Configuration
+$ mysql -u root -p
+> CREATE DATABASE wordpress_sample;
+> CREATE USER wpuser@localhost IDENTIFIED BY 'wppass';
+> GRANT ALL PRIVILEGES ON wpdatabase.* TO wpuser@localhost;
+> FLUSH PRIVILEGES;
+> exit
+$ cd wordpress/
+$ sudo apt-get install php-mysql
+$ sudo service apache2 restart
+$ service mysql restart
 
 ---------------------------------------------- ETAPE 12 = A FAIRE ----------------------------------------------
 

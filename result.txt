@@ -92,7 +92,7 @@ $ apt install apache2.4
 
 $ apt-mark hold <package-name> (A ESSAYER)
 
----------------------------------------------- ETAPE 9 = VM CAMARADE
+---------------------------------------------- ETAPE 9
 
 # On génère la clé depuis la VM A :
 	$ ssh-keygen -t rsa -b 2048

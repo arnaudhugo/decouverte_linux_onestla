@@ -84,7 +84,7 @@ $ sudo visudo
 
 Lors de la reconnexion de l'utilisateur les variables n'existent plus. Nous pourrions les definirs dans le profile de l'utilisateur pour qu'elles soient charger lors de la connexion de ce dernier. 
 
----------------------------------------------- ETAPE 8 = A TEST ----------------------------------------------
+---------------------------------------------- ETAPE 8 ----------------------------------------------
 
 $ sudo emacs /etc/apt/sources.list
 	"deb http://packages.dotdeb.org jessie all"
@@ -97,7 +97,8 @@ $ sudo apt-get update
 $ sudo apt-get install php7.0
 $ sudo apt-get install libapache2-mod-php7.0
 
-$ apt-mark hold <package-name> (A ESSAYER)
+$ sudo apt-mark hold php7.0
+$ sudo apt-mark hold libapache2-mod-php7.0
 
 ---------------------------------------------- ETAPE 9 ----------------------------------------------
 
